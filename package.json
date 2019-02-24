@@ -21,7 +21,7 @@
     "prod": "NODE_ENV=production node server.js",
     "preexport": "next build",
     "export": "next export",
-    "static-run": "next export && serve out"
+    "static-run": "next build && next export && serve out"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.3",
