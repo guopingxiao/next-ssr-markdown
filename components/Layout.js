@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import IfComp from 'if-comp';
+import _ from 'lodash';
 import Header from './Header';
-
-const Layout = ({ title, children }) => (
+const Layout = ({ pathname, children }) => (
   <Fragment>
     <style jsx>{`
       .content-container {
@@ -10,24 +11,41 @@ const Layout = ({ title, children }) => (
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         margin: 70px 20px 20px 20px;
         padding: 10px 20px;
-        background-color: #fff;
+        color: #fff;
+        min-height: 600px;
       }
     `}</style>
-    <Header title={title} />
-    <div className='content-container'>
-      {children}
-    </div>
+    <IfComp
+      expression={_.includes(pathname, 'preview')}
+      trueComp={
+        <Fragment>
+          <Header title='Next-Markdown-Editor' />
+          <div className='content-container'>
+            {children}
+          </div>
+        </Fragment>
+      }
+      falseComp={
+        <IfComp
+          expression={_.includes(pathname, 'edit')}
+          trueComp={
+            children
+          }
+          falseComp={
+            <div className='content-container'>
+              {children}
+            </div>
+          }
+        />
+      }
+    />
   </Fragment>
 );
 export default Layout;
-
 Layout.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.any
-};
-
-Layout.defaultProps = {
-  children: null
+  pathname: PropTypes.string.isRequired,
+  children: PropTypes.object.isRequired
 };

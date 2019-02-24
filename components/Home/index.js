@@ -1,24 +1,45 @@
-import { Fragment } from 'react';
 import { Button } from 'antd';
 import Link from 'next/link';
-import IfComp from 'if-comp';
-import Counter from '../../containers/home/counter';
-
 const Home = () => (
-  <Fragment>
-    <h1>Hello Next.js</h1>
-    <Link href='/user/userList'>
-      <Button type='primary'>用户列表页</Button>
-    </Link>
-    <IfComp
-      expression={true}
-      trueComp={
-        <div style={{ marginTop: '20px' }}>
-          Redux Counter Demo:
-          <Counter />
-        </div>
+  <div className='container'>
+    <style>{`
+      h1 {
+        color: #fff;
+        margin-bottom: 100px;
+        text-align: center;
       }
-    />
-  </Fragment>
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .link-content {
+        display: flex;
+        justify-content: center;
+      }
+      .link-container {
+        width: 30%;
+        text-align: center;
+      }
+    `}</style>
+    <h1>Next-Markdown-Editor</h1>
+    <div className='link-content'>
+      <div className='link-container'>
+        <Link href='/normal'>
+          <Button size='large' type='default'>普通编辑器</Button>
+        </Link>
+      </div>
+      <div className='link-container'>
+        <Link href='/edit'>
+          <Button size='large' type='default'>全屏编辑器</Button>
+        </Link>
+      </div>
+      <div className='link-container'>
+        <Link href='/preview'>
+          <Button size='large' type='default'>预览Markdown</Button>
+        </Link>
+      </div>
+    </div>
+  </div>
 );
 export default Home;
