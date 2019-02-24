@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'next-ssr',
+      name: 'next-ssr-markdown',
       script: './server.js',
       cwd: './', // 当前工作路径
       watch: [
