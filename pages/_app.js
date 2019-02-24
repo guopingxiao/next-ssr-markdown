@@ -26,7 +26,7 @@ class InTerViewSystem extends App {
         <Head>
           <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta charSet='utf-8' />
-          <title>Next-SSR-Demo</title>
+          <title>Next-SSR-MarkDown</title>
           <link rel='shortcut icon' href='/static/favicon.ico' type='image/ico'/>
           <style jsx global>{`
             * {
