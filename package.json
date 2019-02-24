@@ -1,7 +1,7 @@
 {
-  "name": "next-antd-demo",
+  "name": "next-ssr-markdown",
   "version": "1.0.0",
-  "description": "A react ssr demo with ant-design based on Next.js.",
+  "description": "a next ssr markdown project base on next-ssr quickly. See: https://guopingxiao.github.io/next-ssr-markdown",
   "main": "server.js",
   "author": "xiaoguoping",
   "license": "MIT",

@@ -1,5 +1,5 @@
 # next-ssr-markdown
-A demo for edit &amp; priview markdown bases on next-ssr quickly!
+A demo for edit &amp; priview markdown bases on next-ssr quickly! See: https://guopingxiao.github.io/next-ssr-markdown
 
 ## Features
  - next.js
